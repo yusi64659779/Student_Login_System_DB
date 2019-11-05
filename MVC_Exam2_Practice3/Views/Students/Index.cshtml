@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MVC_Exam2_Practice3.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Please Login</h2>
+
+<p>
+    If you do not have an account, please create a new account. Thank you!
+</p>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@foreach (var item in Model)
+{
+    @using (Html.BeginForm("Index", "Student", FormMethod.Post))
+    {
+        <b>Your StudentID: </b>@Html.TextBoxFor(modelItem => item.StudentId)
+        <br />
+        <br />
+        <b>Your Email: </b>@Html.TextBoxFor(modelItem => item.Email)
+        <br />
+        <br />
+        <b>Your Password: </b>@Html.TextBoxFor(modelItem => item.Password)
+        <br />
+        <br />
+        @Html.ActionLink("Login","AfterLogin","Students")
+    }
+}
+

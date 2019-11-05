@@ -1,0 +1,17 @@
+﻿@model MVC_Exam2_Practice3.Models.Student
+
+@{
+    ViewData["Title"] = "AfterLogin";
+}
+
+<h2>Student Home Page</h2>
+
+<body>
+    <p>
+        <h1>
+            Welcome to the student system!
+        </h1>
+    </p>
+    @Html.ActionLink("Check the courses that you take this semester", "Index", "Courses")<br/><br/>
+    @Html.ActionLink("Check the exam results", "Index", "Exams")
+</body>
